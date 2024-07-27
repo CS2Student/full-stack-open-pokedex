@@ -36,10 +36,10 @@ jobs:
         with:
           node-version: '20'
       - name: Bump version and push tag
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' && !contains( join(github.event.commits.*.message, ', '), '#skip')}}
         uses: anothrNick/github-tag-action@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN && !contains( join(github.event.commits.*.message, ', '), '#skip')}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
           RELEASE_BRANCHES: main
     
