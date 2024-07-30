@@ -29,7 +29,7 @@ jobs:
           severity: error
           text: Build failed
           description: commit ${{ github.event.head_commit }} broke the build
-          webhookUrl: ${{ secrets.DISCORD_WEBOOK }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: test
         run: npm test
       - name: Render Deployment
@@ -42,7 +42,7 @@ jobs:
           severity: info
           text: A new version of Pokedex deployed
           description: to https://pokedex.fly.dev/
-          webhookUrl: ${{ secrets.DISCORD_WEBOOK }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-20.04
