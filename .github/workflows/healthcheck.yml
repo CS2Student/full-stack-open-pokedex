@@ -1,7 +1,10 @@
 name: Daily Healthcheck
 on: 
-  schedule: 
-    - cron: "45 20 * * *"
+  push: 
+    branches:
+      - 'main'
+  # schedule: 
+  #   - cron: "45 20 * * *"
 
 jobs:
   test_schedule:
