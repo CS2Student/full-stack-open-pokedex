@@ -41,7 +41,7 @@ jobs:
         with: 
           severity: info
           text: A new version of Pokedex deployed
-          description: to https://pokedex.fly.dev/
+          description: description -> pokedex deployed
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
     needs: [simple_deployment_pipeline]
